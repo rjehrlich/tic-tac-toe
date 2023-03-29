@@ -6,15 +6,18 @@ const player2Input = document.querySelector('#player2-char');
 //console.log(player2Input);
 const tableSquares = document.querySelectorAll('td');
 //console.log(tableSquares);
-const playerTurn = document.querySelector('#current-player')
-console.log(playerTurn);
+const playerTurn = document.querySelector('#current-player');
+//console.log(playerTurn);
 let playerUp = 'player1';
+const tableArr = []
+
+const resetBtn = document.querySelector('#reset-game');
 
 tableSquares.forEach(el => el.addEventListener('click', (event) => {
     event.preventDefault();
     //el will refer to the element the event was hooked on
     let currSquare = el;
-    console.log(el);
+    //console.log(el);
     if (currSquare.className === '') {
         currSquare.className = playerUp;
         if (currSquare.className === 'player1') {
@@ -24,15 +27,26 @@ tableSquares.forEach(el => el.addEventListener('click', (event) => {
         }
         changePlayers();
     }
+        tableArr.push(currSquare.innerText)
+        console.log(tableArr);
 }));
+
 
 function changePlayers() {
     if (playerUp === 'player1') {
         playerUp = 'player2';
-        playerTurn.textContent = `Current Player is: ${playerUp}`;
+        playerTurn.textContent = `Current Player: ${playerUp}`;
     } else {
         playerUp = 'player1';
-        playerTurn.textContent = `Current Player is: ${playerUp}`;
+        playerTurn.textContent = `Current Player: ${playerUp}`;
     }
     playerTurn.className = playerUp;
+}
+
+//add event listener for reset button to clear out all the class names for td?
+
+//Logic for Winning the Game
+    //
+function checkWinner(currSquare) {
+
 }
