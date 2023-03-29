@@ -12,6 +12,8 @@ let playerUp = 'player1';
 const tableArr = []
 
 const resetBtn = document.querySelector('#reset-game');
+resetBtn.addEventListener('click', resetGame);
+
 
 tableSquares.forEach(el => el.addEventListener('click', (event) => {
     event.preventDefault();
@@ -32,6 +34,7 @@ tableSquares.forEach(el => el.addEventListener('click', (event) => {
 }));
 
 
+
 function changePlayers() {
     if (playerUp === 'player1') {
         playerUp = 'player2';
@@ -44,9 +47,15 @@ function changePlayers() {
 }
 
 //add event listener for reset button to clear out all the class names for td?
+function resetGame() {
+    tableSquares.forEach(td => {
+        td.innerText = '';
+        tableSquares.className = '';
+    })
+    location.reload();
+}
 
 //Logic for Winning the Game
-    //
 function checkWinner(currSquare) {
 
 }
