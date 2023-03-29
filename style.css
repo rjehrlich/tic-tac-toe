@@ -1,3 +1,13 @@
 body {
     background-color: lemonchiffon;
 }
+
+table, tr, td {
+    border: solid 2px black;
+    border-spacing: 2px;
+}
+
+td {
+    width: 200px;
+    height: 200px;
+}
