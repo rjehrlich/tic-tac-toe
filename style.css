@@ -1,5 +1,17 @@
 body {
     background-color: lemonchiffon;
+    display:flex; 
+    flex-direction:column; 
+    justify-content:center;
+    min-height:100vh;
+}
+
+header {
+    text-align: center;
+}
+
+aside {
+    padding-bottom: 50px;
 }
 
 table, tr, td {
@@ -8,6 +20,6 @@ table, tr, td {
 }
 
 td {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
 }
