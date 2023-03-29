@@ -8,25 +8,30 @@ const tableSquares = document.querySelectorAll('td');
 //console.log(tableSquares);
 const playerTurn = document.querySelector('#current-player')
 console.log(playerTurn);
-let playerUp = 'Player 1';
+let playerUp = 'player1';
 
 tableSquares.forEach(el => el.addEventListener('click', (event) => {
     event.preventDefault();
     //el will refer to the element the event was hooked on
     let currSquare = el;
     console.log(el);
-    if (currSquare.className === "") {
+    if (currSquare.className === '') {
         currSquare.className = playerUp;
+        if (currSquare.className === 'player1') {
+            currSquare.innerText = player1Input.value
+        } else {
+            currSquare.innerText = player2Input.value
+        }
         changePlayers();
     }
 }));
 
 function changePlayers() {
-    if (playerUp === 'Player 1') {
-        playerUp = 'Player 2';
+    if (playerUp === 'player1') {
+        playerUp = 'player2';
         playerTurn.textContent = `Current Player is: ${playerUp}`;
     } else {
-        playerUp = 'Player 1';
+        playerUp = 'player1';
         playerTurn.textContent = `Current Player is: ${playerUp}`;
     }
     playerTurn.className = playerUp;
