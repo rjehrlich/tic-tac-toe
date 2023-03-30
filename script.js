@@ -8,8 +8,9 @@ const tableSquares = document.querySelectorAll('td');
 //console.log(tableSquares);
 const playerTurn = document.querySelector('#current-player');
 //console.log(playerTurn);
+const gameWinner = document.querySelector('#player-win');
 let playerUp = 'player1';
-//const tableArr = []
+//const tableSpaces = Array(9).fill(null)
 const winCombo = [
     [0, 1, 2], // top row
     [3, 4, 5], // middle row
@@ -25,11 +26,11 @@ const resetBtn = document.querySelector('#reset-game');
 resetBtn.addEventListener('click', resetGame);
 
 
-tableSquares.forEach(el => el.addEventListener('click', (event) => {
+tableSquares.forEach(square => square.addEventListener('click', (event) => {
     event.preventDefault();
-    //el will refer to the element the event was hooked on
-    let currSquare = el;
-    console.log(el);
+    //square will refer to the element the event was hooked on
+    let currSquare = square;
+ 
     if (currSquare.className === '') {
         currSquare.className = playerUp;
         if (currSquare.className === 'player1') {
@@ -39,9 +40,10 @@ tableSquares.forEach(el => el.addEventListener('click', (event) => {
         }
         changePlayers();
     }
-        // tableArr.push(currSquare.innerText)
-        // console.log(tableArr);
-        //console.log(tableSquares);
+        //tableArr.push(event.target.id);
+        //console.log(tableArr);
+        //console.log(tableSpaces);
+        //checkWinner(winCombo, tableSquares);
 }));
 
 
@@ -55,6 +57,7 @@ function changePlayers() {
         playerTurn.textContent = `Current Player: ${playerUp}`;
     }
     playerTurn.className = playerUp;
+    
 }
 
 //add event listener for reset button to clear out all the class names for td?
@@ -68,8 +71,27 @@ function resetGame() {
 
 //Logic for Winning the Game: compare tableSquares to winners
     //loop through tableSquares & winners
+    //if the tablesquare of the matching wincombo contains the class player1
+        //player 1 is the winner
+    //if the tablesquare of the matching wincombo contains the class player2
+        //player 2 is the winner
 function checkWinner(winCombo, tableSquares) {
-    winCombo.forEach(el => {
 
+    winCombo.forEach(array => {
+        const player1Wins = array.every(el => tableSquares[el].firstChild.classList.contains('player1'))
+
+        if (player1Wins) {
+            gameWinner.innerText = 'Player 1 Wins!'
+            return
+        }
+    })
+
+    winCombo.forEach(array => {
+        const player2Wins = array.every(el => tableSquares[el].firstChild.classList.contains('player2'))
+
+        if (player2Wins) {
+            gameWinner.innerText = 'Player 2 Wins!'
+            return
+        }
     })
 }
