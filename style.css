@@ -33,3 +33,6 @@ td {
     font-size: 50px;
 }
 
+td:hover {
+    cursor: pointer;
+}
