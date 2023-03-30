@@ -10,7 +10,7 @@ const playerTurn = document.querySelector('#current-player');
 //console.log(playerTurn);
 const gameWinner = document.querySelector('#player-win');
 let playerUp = 'player1';
-//const tableSpaces = Array(9).fill(null)
+
 const winCombo = [
     [0, 1, 2], // top row
     [3, 4, 5], // middle row
@@ -32,23 +32,24 @@ tableSquares.forEach(square => square.addEventListener('click', (event) => {
     let currSquare = square;
  
     if (currSquare.className === '') {
-        currSquare.className = playerUp;
-        if (currSquare.className === 'player1') {
-            currSquare.innerText = player1Input.value
-        } else {
-            currSquare.innerText = player2Input.value
-        }
-        changePlayers();
+        currSquare.classList.add(`${playerUp}`);
+        currSquare.innerText = player1Input.value;
     }
+    if (playerUp === 'player2') {
+        currSquare.classList.add(`${playerUp}`);
+        currSquare.innerText = player2Input.value;
+    }
+    changePlayers();
+    checkWinner(tableSquares);
         //tableArr.push(event.target.id);
         //console.log(tableArr);
-        //console.log(tableSpaces);
+        //console.log(tableSquares);
         //checkWinner(winCombo, tableSquares);
 }));
 
 
 
-function changePlayers() {
+function changePlayers(e) {
     if (playerUp === 'player1') {
         playerUp = 'player2';
         playerTurn.textContent = `Current Player: ${playerUp}`;
@@ -56,8 +57,8 @@ function changePlayers() {
         playerUp = 'player1';
         playerTurn.textContent = `Current Player: ${playerUp}`;
     }
-    playerTurn.className = playerUp;
-    
+    //playerTurn.className = playerUp;
+    checkWinner(tableSquares);
 }
 
 //add event listener for reset button to clear out all the class names for td?
@@ -75,23 +76,87 @@ function resetGame() {
         //player 1 is the winner
     //if the tablesquare of the matching wincombo contains the class player2
         //player 2 is the winner
-function checkWinner(winCombo, tableSquares) {
-
-    winCombo.forEach(array => {
-        const player1Wins = array.every(el => tableSquares[el].firstChild.classList.contains('player1'))
-
-        if (player1Wins) {
+function checkWinner(tableSquares) {
+        if (tableSquares[0].className === 'player1' && 
+            tableSquares[1].className === 'player1' &&
+            tableSquares[2].className === 'player1') {
             gameWinner.innerText = 'Player 1 Wins!'
-            return
         }
-    })
-
-    winCombo.forEach(array => {
-        const player2Wins = array.every(el => tableSquares[el].firstChild.classList.contains('player2'))
-
-        if (player2Wins) {
+        else if (tableSquares[0].className === 'player2' && 
+            tableSquares[1].className === 'player2' &&
+            tableSquares[2].className === 'player2') {
             gameWinner.innerText = 'Player 2 Wins!'
-            return
         }
-    })
+        if (tableSquares[3].className === 'player1' && 
+            tableSquares[4].className === 'player1' &&
+            tableSquares[5].className === 'player1') {
+            gameWinner.innerText = 'Player 1 Wins!'
+        }
+        else if (tableSquares[3].className === 'player2' && 
+            tableSquares[4].className === 'player2' &&
+            tableSquares[5].className === 'player2') {
+            gameWinner.innerText = 'Player 2 Wins!'
+        }
+        if (tableSquares[6].className === 'player1' && 
+            tableSquares[7].className === 'player1' &&
+            tableSquares[8].className === 'player1') {
+            gameWinner.innerText = 'Player 1 Wins!'
+        }
+        else if (tableSquares[6].className === 'player2' && 
+            tableSquares[7].className === 'player2' &&
+            tableSquares[8].className === 'player2') {
+            gameWinner.innerText = 'Player 2 Wins!'
+        }
+        if (tableSquares[0].className === 'player1' && 
+            tableSquares[3].className === 'player1' &&
+            tableSquares[6].className === 'player1') {
+            gameWinner.innerText = 'Player 1 Wins!'
+        }
+        else if (tableSquares[0].className === 'player2' && 
+            tableSquares[3].className === 'player2' &&
+            tableSquares[6].className === 'player2') {
+            gameWinner.innerText = 'Player 2 Wins!'
+        }
+        if (tableSquares[1].className === 'player1' && 
+            tableSquares[4].className === 'player1' &&
+            tableSquares[7].className === 'player1') {
+            gameWinner.innerText = 'Player 1 Wins!'
+        }
+        else if (tableSquares[1].className === 'player2' && 
+            tableSquares[4].className === 'player2' &&
+            tableSquares[7].className === 'player2') {
+            gameWinner.innerText = 'Player 2 Wins!'
+        }
+        if (tableSquares[2].className === 'player1' && 
+            tableSquares[5].className === 'player1' &&
+            tableSquares[8].className === 'player1') {
+            gameWinner.innerText = 'Player 1 Wins!'
+        }
+        else if (tableSquares[2].className === 'player2' && 
+            tableSquares[5].className === 'player2' &&
+            tableSquares[8].className === 'player2') {
+            gameWinner.innerText = 'Player 2 Wins!'
+        }
+        if (tableSquares[0].className === 'player1' && 
+            tableSquares[4].className === 'player1' &&
+            tableSquares[8].className === 'player1') {
+            gameWinner.innerText = 'Player 1 Wins!'
+        }
+        else if (tableSquares[0].className === 'player2' && 
+            tableSquares[4].className === 'player2' &&
+            tableSquares[8].className === 'player2') {
+            gameWinner.innerText = 'Player 2 Wins!'
+        }
+        if (tableSquares[2].className === 'player1' && 
+            tableSquares[4].className === 'player1' &&
+            tableSquares[6].className === 'player1') {
+            gameWinner.innerText = 'Player 1 Wins!'
+        }
+        else if (tableSquares[2].className === 'player2' && 
+            tableSquares[4].className === 'player2' &&
+            tableSquares[6].className === 'player2') {
+            gameWinner.innerText = 'Player 2 Wins!'
+        }
+
+
 }
