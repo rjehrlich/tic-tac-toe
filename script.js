@@ -74,9 +74,10 @@ function changePlayers(e) {
     //if the tablesquare of the matching wincombo contains the class player2
         //player 2 is the winner
 function checkWinner(tableSquares) {
+    //gameWinner.classList.add('w3-animate-bottom');
         if (tableSquares[0].className === 'Player1' && 
             tableSquares[1].className === 'Player1' &&
-            tableSquares[2].className === 'Player1') {
+            tableSquares[2].className === 'Player1') {        
             gameWinner.innerText = 'Player 1 Wins!'
         }
         else if (tableSquares[0].className === 'Player2' && 
