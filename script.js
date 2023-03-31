@@ -11,16 +11,16 @@ const playerTurn = document.querySelector('#current-player');
 const gameWinner = document.querySelector('#player-win');
 let playerUp = 'player1';
 
-const winCombo = [
-    [0, 1, 2], // top row
-    [3, 4, 5], // middle row
-    [6, 7, 8], // bottom row
-    [0, 3, 6], // left column
-    [1, 4, 7], // middle column
-    [2, 5, 8], // right column
-    [0, 4, 8], // diag top left to bottom right
-    [2, 4, 6], // diag top right to bottom left
-  ];
+// const winCombo = [
+//     [0, 1, 2], // top row
+//     [3, 4, 5], // middle row
+//     [6, 7, 8], // bottom row
+//     [0, 3, 6], // left column
+//     [1, 4, 7], // middle column
+//     [2, 5, 8], // right column
+//     [0, 4, 8], // diag top left to bottom right
+//     [2, 4, 6], // diag top right to bottom left
+//   ];
 
 const resetBtn = document.querySelector('#reset-game');
 resetBtn.addEventListener('click', resetGame);
@@ -64,10 +64,11 @@ function changePlayers(e) {
 //add event listener for reset button to clear out all the class names for td?
 function resetGame() {
     tableSquares.forEach(td => {
-        td.innerText = '';
-        tableSquares.className = '';
+        td.classList.remove('player1', 'player2');
     })
-    location.reload();
+    player1Input.value = "X"
+    player2Input.value = "0"
+    //location.reload();
 }
 
 //Logic for Winning the Game: compare tableSquares to winners
