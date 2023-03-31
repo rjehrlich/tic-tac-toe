@@ -11,6 +11,7 @@ const playerTurn = document.querySelector('#current-player');
 const gameWinner = document.querySelector('#player-win');
 let playerUp = 'Player1';
 playerTurn.textContent = `Player Up: ${playerUp}`
+const resetBtn = document.querySelector('#reset-game');
 
 // const winCombo = [
 //     [0, 1, 2], // top row
@@ -23,15 +24,17 @@ playerTurn.textContent = `Player Up: ${playerUp}`
 //     [2, 4, 6], // diag top right to bottom left
 //   ];
 
-const resetBtn = document.querySelector('#reset-game');
-resetBtn.addEventListener('click', (event) => {
-    //add event listener for reset button to clear out all the class names for td?
-    // tableSquares.forEach(td => {
-    //     td.classList.remove('player1', 'player2');
-    // })
-    // player1Input.value = "X"
-    // player2Input.value = "0"
-    location.reload();
+//add event listener for reset button to clear out all the class names for td?
+resetBtn.addEventListener('click', () => {
+    tableSquares.forEach(square => {
+        square.classList.remove('Player1', 'Player2');
+        square.innerText = '';
+    });
+    player1Input.value = "X";
+    player2Input.value = "0";
+    playerUp = 'Player1';
+    playerTurn.textContent = `Player Up: ${playerUp}`;
+    gameWinner.innerText = '';
 });
 
 
@@ -54,7 +57,7 @@ tableSquares.forEach(square => square.addEventListener('click', (event) => {
 
 
 
-function changePlayers(e) {
+function changePlayers() {
     if (playerUp === 'Player1') {
         playerUp = 'Player2';
         playerTurn.textContent = `Player Up: ${playerUp}`;
@@ -74,7 +77,6 @@ function changePlayers(e) {
     //if the tablesquare of the matching wincombo contains the class player2
         //player 2 is the winner
 function checkWinner(tableSquares) {
-    //gameWinner.classList.add('w3-animate-bottom');
         if (tableSquares[0].className === 'Player1' && 
             tableSquares[1].className === 'Player1' &&
             tableSquares[2].className === 'Player1') {        

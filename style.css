@@ -29,6 +29,16 @@ main {
     padding-bottom: 50px;
 }
 
+div {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.player-options {
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
 #reset-game {
     background-color: #DDBCB9;
     color: #F6F4F6;
