@@ -90,4 +90,9 @@ td:hover {
     color: #BC797B;
 }
 
+.winning-square {
+    background-color: #7E6774;
+    color: #F6F4F6;
+}
+
 
