@@ -12,26 +12,24 @@
         <h1>Tic Tac Toe</h1>
     </header>
     <main>
-    <aside>
+    <section class="game-stats">
         <div class="player-options">
-            <label class="player1">Player 1</label>
+            <label class="player1">Player1</label>
             <input type="text" id="player1-char" value="X">
-        </div>
-        <div class="player-options">
-            <label class="player2">Player 2</label>
+            <label class="player2">Player2</label>
             <input type="text" id="player2-char" value="O">
-        </div> 
+        </div>
         <div>
-            <p id="current-player">Current Player: </p>
+            <h2 id="current-player">Player Up </h2>
         </div>
         <div class="game-winner">
             <h2 class="result">Game Result:</h2>
             <p id="player-win"></p>
         </div>
-        <button id="reset-game">Reset Game</button>
-    </aside>
+        
+    </section>
 
-    <section>
+    <section class="game-area">
         <table class="game-board">
             <tbody>
             <tr>
@@ -50,8 +48,10 @@
               <td></td>
             </tr>
           </tbody>
-        </table>
+        </table> 
+    <button id="reset-game">Reset Game</button>   
     </section>
+      
     </main>
     <footer></footer>
 <script src="script.js"></script>    
