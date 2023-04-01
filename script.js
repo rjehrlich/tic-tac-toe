@@ -18,12 +18,10 @@ tableSquares.forEach(square => square.addEventListener('click', (event) => {
         //If not, then add the starting player's (p1) character to the board square
         //if player up is p2 click even will add their input
     if (currSquare.className === '') {
-        currSquare.classList.add(`${playerUp}`);
-        currSquare.innerText = player1Input.value;
+        markSquare(currSquare, player1Input.value);
     }
     if (playerUp === 'Player2') {
-        currSquare.classList.add(`${playerUp}`);
-        currSquare.innerText = player2Input.value;
+        markSquare(currSquare, player2Input.value);
     }
     changePlayers();
     checkWinner(tableSquares);
@@ -36,6 +34,10 @@ function changePlayers() {
     playerTurn.textContent = `Player Up: ${playerUp}`;
 }
 
+function markSquare(square, playerInput) {
+    square.classList.add(`${playerUp}`);
+    square.innerText = playerInput;
+  }
 
 //Logic for Winning the Game: compare tableSquares to winners
     //loop through wincombos array of arrays
