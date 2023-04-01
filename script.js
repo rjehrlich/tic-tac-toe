@@ -32,15 +32,8 @@ tableSquares.forEach(square => square.addEventListener('click', (event) => {
 
 
 function changePlayers() {
-    if (playerUp === 'Player1') {
-        playerUp = 'Player2';
-        playerTurn.textContent = `Player Up: ${playerUp}`;
-    } else {
-        playerUp = 'Player1';
-        playerTurn.textContent = `Player Up: ${playerUp}`;
-    }
-
-    checkWinner(tableSquares);
+    playerUp = playerUp === 'Player1' ? 'Player2' : 'Player1';
+    playerTurn.textContent = `Player Up: ${playerUp}`;
 }
 
 
