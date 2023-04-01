@@ -1,25 +1,22 @@
 const player1Input = document.querySelector('#player1-char');
-//console.log(player1Input);
 const player2Input = document.querySelector('#player2-char');
-//console.log(player2Input);
 const tableSquares = document.querySelectorAll('td');
-//console.log(tableSquares);
 const playerTurn = document.querySelector('#current-player');
-//console.log(playerTurn);
 const gameWinner = document.querySelector('#player-win');
+//initialize playerUp to p1 because they start the game
 let playerUp = 'Player1';
 playerTurn.textContent = `Player Up: ${playerUp}`
 const resetBtn = document.querySelector('#reset-game');
 
-
+//event listener for each square in the table to run the game functions
 tableSquares.forEach(square => square.addEventListener('click', (event) => {
     event.preventDefault();
     //square will refer to the element the event was hooked on
     let currSquare = square;
 
-    //check if square has empty class & no text content before marking square
-        //If either not met
-            //the click event will not add new content to the square
+    //check if square has empty class before marking square
+        //If not, then add the starting player's (p1) character to the board square
+        //if player up is p2 click even will add their input
     if (currSquare.className === '') {
         currSquare.classList.add(`${playerUp}`);
         currSquare.innerText = player1Input.value;
