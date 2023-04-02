@@ -5,7 +5,7 @@ const playerTurn = document.querySelector('#current-player');
 const gameWinner = document.querySelector('#player-win');
 //initialize playerUp to p1 because they start the game
 let playerUp = 'Player1';
-playerTurn.textContent = `Player Up: ${playerUp}`
+playerTurn.textContent = `${playerUp}`
 const resetBtn = document.querySelector('#reset-game');
 
 //event listener for each square in the table to run the game functions
@@ -33,7 +33,7 @@ tableSquares.forEach(square => square.addEventListener('click', (event) => {
 
 function changePlayers() {
     playerUp = playerUp === 'Player1' ? 'Player2' : 'Player1';
-    playerTurn.textContent = `Player Up: ${playerUp}`;
+    playerTurn.textContent = `${playerUp}`;
 }
 
 function markSquare(square, playerInput) {
@@ -105,6 +105,6 @@ function resetGame() {
     player1Input.value = "X";
     player2Input.value = "0";
     playerUp = 'Player1';
-    playerTurn.textContent = `Player Up: ${playerUp}`;
+    playerTurn.textContent = `${playerUp}`;
     gameWinner.innerText = '';
   }
