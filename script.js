@@ -19,6 +19,8 @@ tableSquares.forEach(square => square.addEventListener('click', (event) => {
         //if player up is p2 click even will add their input
     if (currSquare.className === '') {
         markSquare(currSquare, player1Input.value);
+    } else {
+      return;
     }
     if (playerUp === 'Player2') {
         markSquare(currSquare, player2Input.value);
