@@ -73,20 +73,19 @@ div {
     flex-direction: column;
 }
 
-tr, td {
-    border: solid 2px black;
-    border-radius: 10px;
-    border-spacing: 2px;
-}
-
 td {
-    width: 150px;
-    height: 150px;
+    background-color: #BC797B;
+    border-radius:25%;
+    border-spacing: 2px;
+    width:150px;
+    height:150px;
     text-transform: uppercase;
     text-align: center;
     font-family: 'Monoton', cursive;
     font-size: 50px;
+    color: #F6F4F6;
 }
+
 
 .Player1:hover {
     cursor: not-allowed;
