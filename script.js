@@ -72,7 +72,25 @@ function checkWinner(tableSquares) {
         return;
       }
     }
+    checkDraw(tableSquares);
   }
+
+//function to determine if there is no winner in the game (draw)  
+function checkDraw(tableSquares) {
+  // Check if all squares are marked
+    //array from the table of squares
+      //every square/el in array have no class
+  const allSquaresMarked = Array.from(tableSquares).every(square => square.classList.length > 0);
+
+  // If all squares are marked and no winner is found
+    //then a draw
+  if (allSquaresMarked && gameWinner.innerText === '') {
+    gameWinner.innerText = 'Draw!';
+    return true;
+  }
+
+  return false;
+}  
   
 //add event listener for reset button to clear out all the class names for td
     //clear out all updated text that was dependent on game winner
