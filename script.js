@@ -40,6 +40,7 @@ function markSquare(square, playerInput) {
     square.classList.add(`${playerUp}`);
     square.innerText = playerInput;
   }
+  
 
 //Logic for Winning the Game: compare tableSquares to winners
     //loop through wincombos array of arrays
@@ -108,3 +109,4 @@ function resetGame() {
     playerTurn.textContent = `${playerUp}`;
     gameWinner.innerText = '';
   }
+

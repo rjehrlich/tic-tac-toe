@@ -8,6 +8,7 @@ body {
     font-family: 'Roboto', sans-serif;
     letter-spacing: 2px;
     color: #7E6774;
+    overflow: hidden;
 }
 
 header {
@@ -46,11 +47,11 @@ input {
     font-size: 18px;
 }
 
-div {
+/* div {
     display: flex;
     flex-direction: column;
     margin: 20px;
-}
+} */
 
 #current-player {
     font-size: 20px;
