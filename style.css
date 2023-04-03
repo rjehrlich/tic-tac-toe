@@ -11,11 +11,22 @@ body {
     overflow: hidden;
 }
 
+div {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
 header {
     text-align: center;
-    font-size: 60px;
-    font-weight: 500;
-    padding: 50px 0px 50px 0px;
+    font-size: 65px;
+    font-weight: 600;
+    padding: 30px 0px 50px 0px;
+    color: #ffffff;
+    text-shadow: -2px 3px 5px #7E6774,
+				  3px 3px 5px #7E6774,
+				  3px -2px 0 #7E6774,
+				  -2px -2px 0 #7E6774;            
 }
 
 main {
@@ -26,25 +37,26 @@ main {
 .game-stats {
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
 }
 
 label {
-    font-size: 20px;
     padding-bottom: 10px;
     padding-top: 10px;
-    font-size: 1.5em;
+    font-size: 28px;
     font-weight: 500;
 }
 
 input {
     max-width: 50px;
     padding: 10px 10px;
-    border-color: linear-gradient(to right, #BC797B, #7E6774);
+    border-color: #BC797B;
     border-radius: 20px;
-    border-width: 1px;
+    border-width: 4px;
     background-color: #F6F4F6;
     font-size: 18px;
+    font-weight: bold;
+    color: #7E6774;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
 /* div {
@@ -53,8 +65,26 @@ input {
     margin: 20px;
 } */
 
+h2 {
+    font-size: 30px;
+    text-align: center;
+    color: #7E6774;
+}
+
+p {
+    margin-top: 10px;
+}
+
 #current-player {
-    font-size: 20px;
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: 6px;
+    text-align: center;
+    color: #F6F4F6;
+    text-shadow: -1px 2px 3px #7E6774,
+				  2px 2px 3px #7E6774,
+				  2px -1px 0 #7E6774,
+				  -1px -1px 0 #7E6774;
 }
 
 .player-options {
@@ -72,12 +102,14 @@ input {
     margin: 10px 1px;
     justify-content: center;
     font-size: 20px;
-    font-weight: 500;
+    font-weight: bold;
     text-transform: uppercase;
 }
 
 #reset-game:hover {
     cursor: grab;
+    background-color: #7E6774;
+
 }
 
 .game-area {
@@ -97,7 +129,7 @@ td {
     text-transform: uppercase;
     text-align: center;
     font-family: 'Monoton', cursive;
-    font-size: 50px;
+    font-size: 75px;
     color: #F6F4F6;
 }
 
@@ -116,6 +148,7 @@ td:hover {
     font-weight: 600;
     color: #BC797B;
     font-family: 'Monoton', cursive;
+    letter-spacing: 10px;
 }
 
 .winning-square {

@@ -70,6 +70,9 @@ function checkWinner(tableSquares) {
         square1.classList.add('winning-square');
         square2.classList.add('winning-square');
         square3.classList.add('winning-square');
+        confetti({
+          particleCount: 150
+        });
         return;
       }
     }
