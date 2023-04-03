@@ -43,11 +43,12 @@ Wireframe:
 #### HTML
 * Semantic HTML
 #### CSS
-* Additional hover effects
+* Hover effects for game board squares
 * Flexbox or flexgrid for game board
 #### Javascript
 * Flexible/open player input
 * Refactor code: more functions, order makes more sense, DRY, etc.
+* Stop user from clicking/ using an already taken square
 
 ### MVP - Gold Plan
 #### HTML
@@ -55,6 +56,7 @@ Wireframe:
 * Fun player characters users can choose
 #### Javascript
 * Animation that displays when someone wins
+* Create functionality to hold players scores
 
 ### User Stories
 * As a user, I should be able to start a new tic tac toe game

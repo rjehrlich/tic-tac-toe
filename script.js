@@ -1,9 +1,9 @@
+//game starting variables
 const player1Input = document.querySelector('#player1-char');
 const player2Input = document.querySelector('#player2-char');
 const tableSquares = document.querySelectorAll('td');
 const playerTurn = document.querySelector('#current-player');
 const gameWinner = document.querySelector('#player-win');
-//initialize playerUp to p1 because they start the game
 let playerUp = 'Player1';
 playerTurn.textContent = `${playerUp}`
 const resetBtn = document.querySelector('#reset-game');
@@ -96,7 +96,7 @@ function checkDraw(tableSquares) {
   return false;
 }  
   
-//add event listener for reset button to clear out all the class names for td
+//event listener for reset button to clear out all the class names for td
     //clear out all updated text that was dependent on game winner
 //separate function for resetting the game    
 resetBtn.addEventListener('click', resetGame);
