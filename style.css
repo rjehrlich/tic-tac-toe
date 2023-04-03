@@ -148,6 +148,7 @@ td:hover {
 
 }
 
+/* Squares to be highlighted on a game win */
 .winning-square {
     background-color: #7E6774;
     color: #F6F4F6;

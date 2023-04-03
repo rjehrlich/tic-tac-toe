@@ -48,6 +48,7 @@ function markSquare(square, playerInput) {
         //that player of specific class is the winner
         //update the game result to reflect winner
 function checkWinner(tableSquares) {
+  //array of all possible win combos
     const winCombo = [
         [0, 1, 2], // top row
         [3, 4, 5], // middle row
@@ -58,18 +59,25 @@ function checkWinner(tableSquares) {
         [0, 4, 8], // diag top left to bottom right
         [2, 4, 6], // diag top right to bottom left
     ];
-  
+    
+    //loop through wincombo array
+      //initialize a variable that will store each winning combination at a given index
+        //initialize 3 variables that will store each number in the array eavh time the loop runs to the next combo
     for (let i = 0; i < winCombo.length; i++) {
       const combo = winCombo[i];
       const square1 = tableSquares[combo[0]];
       const square2 = tableSquares[combo[1]];
       const square3 = tableSquares[combo[2]];
   
+        //if the combo arr being evaluated at the first, sec, third nums & the square at that num have same class name - winner is called
+            //winner is determined by classname player1/player2
       if (square1.className && square1.className === square2.className && square1.className === square3.className) {
         gameWinner.innerText = `${square1.className.split(' ')[0]} Wins!`;
+        //add a class to each evaluated winning square
         square1.classList.add('winning-square');
         square2.classList.add('winning-square');
         square3.classList.add('winning-square');
+        //animation to play when winner is determined
         confetti({
           particleCount: 150
         });
@@ -83,7 +91,7 @@ function checkWinner(tableSquares) {
 function checkDraw(tableSquares) {
   // Check if all squares are marked
     //array from the table of squares
-      //every square/el in array have no class
+      //return true if every square/el in array have no class
   const allSquaresMarked = Array.from(tableSquares).every(square => square.classList.length > 0);
 
   // If all squares are marked and no winner is found
